@@ -6,7 +6,7 @@ let warns = JSON.parse(fs.readFileSync("../warnings.json", "utf8"));
 module.exports.run = async (bot, message, args) => {
     //.warn @user <reason>
 
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("Nice try, pal.");
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("You are not authorized to use this command");
     let wUser = message.guild.member(message.mentions.users.first()) || message.guild.members.get(args[0])
     if(!wUser) return message.reply("Couldn't find that user");
     if(wUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Cannot warn that user");
@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
 
     warns[wUser.id].warns++;
 
-    fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
+    fs.writeFile("../warnings.json", JSON.stringify(warns), (err) => {
         if (err) console.log(err);
     });
 

@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const ms = require("ms");
 const fs = require("fs");
-let warns = JSON.parse(fs.readFileSync("../warnings.json", "utf8"));
+let warns = JSON.parse(fs.readFileSync("./warnings.json", "utf8"));
 
 module.exports.run = async (bot, message, args) => {
     //.warn @user <reason>
@@ -19,7 +19,7 @@ module.exports.run = async (bot, message, args) => {
 
     warns[wUser.id].warns++;
 
-    fs.writeFile("../warnings.json", JSON.stringify(warns), (err) => {
+    fs.writeFile("./warnings.json", JSON.stringify(warns), (err) => {
         if (err) console.log(err);
     });
 

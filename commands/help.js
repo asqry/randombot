@@ -21,6 +21,7 @@ module.exports.run = async (bot, message, args) => {
 	.addField(`${prefix}pun`, "Displays a random pun")
 	.addField(`${prefix}rng`, "Outputs a random number from 1-100")
 	.addField(`${prefix}roll`, "Outputs a random number from 1-6")
+	.addField(`${prefix}doubleroll`, "Outputs two random numbers from 1-6")
 	.addField(`${prefix}fortune`, "Outputs a random fortune")
 	.addField(`${prefix}report`, `Usage: ${prefix}report <@user> <reason> - Sends a report against a specified user`)
 	.setFooter(`Requested by ${message.author.tag}`, message.author.avatarURL)

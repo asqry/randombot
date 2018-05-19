@@ -77,7 +77,7 @@ module.exports.run = async (bot, message, args) => {
     }
 
     if(warns[wUser.id].warns == 8){
-        message.guild.member(wUser).kick("8 Warnings - Kofuku Warning System")
+        message.guild.member(wUser).kick("8 Warnings - RandomBot Warning System")
     }
 
     if(warns[wUser.id].warns == 9){
@@ -94,7 +94,7 @@ module.exports.run = async (bot, message, args) => {
     }
 
     if(warns[wUser.id].warns == 10){
-        message.guild.member(wUser).ban("10 Warnings - Kofuku Warning System")
+        message.guild.member(wUser).ban("10 Warnings - RandomBot Warning System")
     }
 }
 

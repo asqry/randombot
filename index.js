@@ -65,14 +65,13 @@ bot.on("message", async message => {
     }
     
     if(cmd === `${prefix}setgame`){
+           message.delete().catch();
            let game = args.join(" ");
         
            bot.user.setActivity(`${game}`, {type:"Playing"});
                                             
            let setgameembed = new Discord.RichEmbed()
            .setTitle(`Successfully set the game to "${game}"`)
-           
-           message.delete().catch();
                                 
            message.channel.send(setgameembed).then(msg => {msg.delete(5000)});
     }

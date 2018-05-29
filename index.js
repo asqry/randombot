@@ -67,7 +67,7 @@ bot.on("message", async message => {
     if(cmd === `${prefix}setgame`){
            let game = args.join(" ");
         
-           bot.user.setActivity(`${game}`, {type:"Playing"));
+           bot.user.setActivity(`${game}`, {type:"Playing"});
                                             
            let setgameembed = new Discord.RichEmbed()
            .setTitle(`Successfully set the game to "${game}"`)

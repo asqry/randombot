@@ -28,7 +28,6 @@ function loadCmds() {
 function loadBot() {
     bot.on("ready", async () => {
         console.log(`${bot.user.username} is online!`);
-        bot.user.setActivity("Da Bot", {type: "Playing"});
     });
 }
 
@@ -63,6 +62,17 @@ bot.on("message", async message => {
         message.channel.send(rembed).then(msg => {msg.delete(5000)});
 
         loadBot()
+    }
+    
+    if(cmd === `${prefix}setgame`){
+           let game = args.join(" ");
+        
+           bot.user.setActivity(`${game}`, {type:"Playing"));
+                                            
+           let setgameembed = new Discord.RichEmbed()
+           .setTitle(`Successfully set the game to "${game}"`)
+                                
+           message.channel.send(setgameembed).then(msg => {msg.delete(5000)});
     }
 
 });

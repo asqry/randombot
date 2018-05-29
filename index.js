@@ -71,6 +71,8 @@ bot.on("message", async message => {
                                             
            let setgameembed = new Discord.RichEmbed()
            .setTitle(`Successfully set the game to "${game}"`)
+           
+           message.delete().catch();
                                 
            message.channel.send(setgameembed).then(msg => {msg.delete(5000)});
     }
